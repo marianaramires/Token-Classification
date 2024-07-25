@@ -8,11 +8,12 @@ from itemloaders.processors import MapCompose, TakeFirst
 from w3lib.html import remove_tags
 
 class InfomoneynewsItem(scrapy.Item):
-    # define the fields for your item here like:
+    # item field for news title
     title = scrapy.Field(
         input_processor=MapCompose(remove_tags)
     )
     
+    # item field for news text
     text = scrapy.Field(
         input_processor=MapCompose(remove_tags)
     )
